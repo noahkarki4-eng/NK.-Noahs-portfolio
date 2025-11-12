@@ -1,499 +1,263 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Noah — Personal Portfolio</title>
-  <meta name="description" content="NK. Noah — Website Developer based in Dubai. Web & App Developer, Designer, Creative Director." />
-  <style>
-    :root{
-      --bg:#f7f8fb;
-      --card:#ffffff;
-      --muted:#667085;
-      --accent:#046bd2;
-      --glass: rgba(255,255,255,0.6);
-      --radius:14px;
-      --max-w:1100px;
-      --gap:20px;
-      --shadow: 0 8px 28px rgba(11,22,48,0.08);
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color: #0f1724;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background:linear-gradient(180deg,#fbfdff 0%,var(--bg) 100%);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-      padding:32px 16px;
-      display:flex;
-      justify-content:center;
-      font-size:16px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NK. Noah — Personal Portfolio</title>
+<style>
+  :root {
+    --c1:#e36414;
+    --c2:#118ab2;
+    --c3:#335c67;
+    --c4:#83c5be;
+    --c5:#f4f0bb;
+    --c6:#f77f00;
+    --c7:#00f5d4;
+    --c8:#efd6ac;
+    --bg:#f4f4f9;
+    --text:#0f1724;
+    --shadow:0 8px 24px rgba(0,0,0,0.08);
+    --radius:12px;
+    font-family: Arial, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    display:flex;
+    justify-content:center;
+    min-height:100vh;
+    font-size:16px;
+    line-height:1.5;
+  }
+  .container{
+    max-width:1200px;
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    padding:20px;
+  }
+  header{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 0;
+  }
+  .logo img{
+    width:80px;
+    height:80px;
+    border-radius:var(--radius);
+    object-fit:cover;
+    box-shadow:var(--shadow);
+  }
+  nav a{
+    text-decoration:none;
+    margin-left:15px;
+    font-weight:600;
+    color:var(--c2);
+  }
+  .profile-card{
+    flex:1;
+    min-width:300px;
+    background:#fff;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+  .profile-card img{
+    width:100%;
+    max-width:250px;
+    border-radius:var(--radius);
+    margin-bottom:15px;
+  }
+  .profile-card h1{margin-bottom:8px;font-size:24px;color:var(--c3);}
+  .profile-card p{margin-bottom:10px;color:var(--c4);}
+  .badges{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    justify-content:center;
+    margin-bottom:15px;
+  }
+  .badge{
+    background:var(--c5);
+    color:var(--c6);
+    font-weight:700;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:14px;
+  }
+  .section{
+    flex:2;
+    min-width:500px;
+    background:#fff;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:20px;
+    position:relative;
+  }
+  .section h2{margin-bottom:10px;color:var(--c2);}
+  .section p{margin-bottom:10px;color:var(--c3);}
+  .services, .values{
+    display:grid;
+    gap:10px;
+  }
+  .services{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
+  .service{
+    background:var(--c4);
+    color:#fff;
+    border-radius:var(--radius);
+    padding:10px;
+    font-weight:600;
+  }
+  .values{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:10px;}
+  .value{
+    background:var(--c7);
+    color:#000;
+    border-radius:var(--radius);
+    padding:8px;
+    font-weight:600;
+    text-align:center;
+  }
+  footer{
+    width:100%;
+    text-align:center;
+    margin-top:20px;
+    padding:10px;
+    color:var(--c3);
+  }
 
-    .wrap{
-      width:100%;
-      max-width:var(--max-w);
-    }
+  /* right-side news ticker */
+  .news-ticker{
+    position:fixed;
+    top:0;
+    right:0;
+    width:200px;
+    height:50%;
+    background:#fff;
+    border-left:3px solid var(--c6);
+    overflow:hidden;
+    padding:10px;
+    box-shadow:var(--shadow);
+    display:flex;
+    flex-direction:column;
+    justify-content:start;
+  }
+  .news-ticker h3{
+    font-size:16px;
+    color:var(--c2);
+    margin-bottom:10px;
+  }
+  .news-items{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    animation:scrollNews 20s linear infinite;
+  }
+  .news-items p{
+    font-size:14px;
+    color:var(--c3);
+  }
+  @keyframes scrollNews{
+    0%{transform:translateY(0);}
+    100%{transform:translateY(-100%);}
+  }
 
-    /* skip link */
-    .skip-link{
-      position: absolute;
-      left: -999px;
-      top: auto;
-      background:#111;
-      color:#fff;
-      padding:8px 12px;
-    }
-    .skip-link:focus{left:16px; top:16px; z-index:9999; border-radius:6px}
-
-    header{
-      display:flex;
-      gap:var(--gap);
-      justify-content:space-between;
-      align-items:center;
-      margin-bottom:24px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      text-decoration:none;
-      color:inherit;
-    }
-    .logo{
-      width:64px;height:64px;border-radius:10px;overflow:hidden;flex:0 0 64px;box-shadow:var(--shadow);
-      background:linear-gradient(180deg, rgba(4,107,210,0.08), rgba(4,107,210,0.02));
-    }
-    .logo img{width:100%;height:100%;object-fit:cover;display:block}
-
-    .brand h1{font-size:18px;margin:0;line-height:1}
-    .brand p{margin:0;font-size:13px;color:var(--muted)}
-
-    /* nav */
-    nav.desktop{
-      display:flex;gap:12px;align-items:center;
-    }
-    nav.desktop a{
-      text-decoration:none;color:var(--muted);padding:8px 10px;border-radius:8px;font-weight:600;font-size:14px;
-    }
-    nav.desktop a.active, nav.desktop a:hover{background:var(--card);color:var(--accent);box-shadow:var(--shadow)}
-
-    /* mobile menu */
-    .hamburger{
-      display:none;
-      width:44px;height:44px;border-radius:10px;border:1px solid rgba(11,22,48,0.06);
-      background:var(--card);align-items:center;justify-content:center;
-    }
-    .hamburger svg{width:20px;height:20px;display:block}
-
-    .hero{
-      display:grid;
-      grid-template-columns: 360px 1fr;
-      gap:var(--gap);
-      align-items:start;
-      margin-bottom:28px;
-    }
-    .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:var(--shadow);
-    }
-
-    /* profile column */
-    .profile{
-      display:flex;flex-direction:column;gap:12px;
-    }
-    .photo{
-      width:100%;height:320px;border-radius:12px;overflow:hidden;background:#eee;
-    }
-    .photo img{width:100%;height:100%;object-fit:cover;display:block}
-
-    .info h2{margin:0;font-size:20px}
-    .meta{color:var(--muted);font-size:14px;margin-top:6px}
-
-    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    .badge{background:linear-gradient(90deg,rgba(4,107,210,0.08),rgba(4,107,210,0.02));padding:8px 10px;border-radius:999px;font-weight:700;color:var(--accent);font-size:13px}
-
-    /* main column */
-    .content h3{margin-top:0}
-    .hero-cta{display:flex;gap:12px;margin-top:12px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#fff;font-weight:700;text-decoration:none}
-    .btn.alt{background:transparent;border:1px solid rgba(11,22,48,0.06);color:var(--accent);font-weight:700}
-
-    .section{
-      margin-top:18px;
-      display:grid;
-      gap:14px;
-    }
-
-    /* services grid */
-    .services{
-      display:grid;
-      grid-template-columns: repeat(3,1fr);
-      gap:12px;
-    }
-    .service{padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(11,22,48,0.04)}
-    .service h4{margin:0;font-size:15px}
-    .service p{margin:8px 0 0;color:var(--muted);font-size:14px}
-
-    /* working process */
-    .process p{color:var(--muted);}
-
-    /* counters */
-    .counters{display:flex;gap:12px}
-    .counter{flex:1;padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);text-align:center}
-    .counter .num{font-size:28px;font-weight:800;color:var(--accent)}
-    .counter .label{color:var(--muted);font-weight:700;text-transform:uppercase;font-size:12px;margin-top:6px}
-
-    /* core values */
-    .values{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-    .value{padding:10px;border-radius:8px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(11,22,48,0.04);font-weight:600;color:#0f1724;font-size:14px}
-
-    /* contact & map */
-    .contact{display:grid;grid-template-columns:1fr 300px;gap:12px}
-    .contact form{display:flex;flex-direction:column;gap:8px}
-    input,textarea{padding:10px;border-radius:8px;border:1px solid rgba(11,22,48,0.06);font-size:14px}
-    textarea{min-height:120px;resize:vertical}
-    .map iframe{width:100%;height:100%;border-radius:8px;border:0}
-
-    footer{
-      margin-top:26px;padding:18px 12px;border-radius:12px;background:transparent;color:var(--muted);display:flex;justify-content:space-between;align-items:center;
-    }
-
-    /* small screens */
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr; }
-      .services{grid-template-columns:repeat(2,1fr)}
-      .contact{grid-template-columns:1fr}
-    }
-    @media (max-width:640px){
-      body{padding:18px 12px}
-      header{align-items:flex-start;gap:10px;flex-direction:column}
-      nav.desktop{display:none}
-      .hamburger{display:flex}
-      .services{grid-template-columns:1fr}
-      .values{grid-template-columns:1fr}
-      .logo{width:56px;height:56px}
-      .photo{height:260px}
-    }
-
-    /* mobile drawer */
-    .drawer{
-      position:fixed;inset:0;z-index:9999;pointer-events:none;
-    }
-    .drawer .sheet{
-      position:fixed;right:0;top:0;height:100vh;width:300px;max-width:85vw;background:var(--card);box-shadow:0 40px 80px rgba(11,22,48,0.3);
-      transform:translateX(110%);transition:transform .28s;pointer-events:auto;padding:18px;
-    }
-    .drawer.open .sheet{transform:translateX(0)}
-    .drawer .close{position:absolute;left:12px;top:12px;border:0;background:transparent;font-weight:700;color:var(--muted)}
-    .drawer nav a{display:block;padding:10px 8px;border-radius:8px;color:var(--muted);text-decoration:none}
-
-    /* small helpers */
-    .muted{color:var(--muted)}
-    hr.sep{border:0;border-top:1px solid rgba(11,22,48,0.06);margin:12px 0}
-  </style>
+  /* responsive */
+  @media(max-width:900px){
+    .container{flex-direction:column;}
+    .news-ticker{position:relative;width:100%;height:auto;border-left:none;border-top:3px solid var(--c6);}
+  }
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <div class="wrap" role="document" aria-label="Noah portfolio">
+  <div class="container">
     <header>
-      <a class="brand" href="#" aria-label="Noah home">
-        <span class="logo"><img src="image.jpg" alt="NK Noah profile image" /></span>
-        <div>
-          <h1>NK. Noah</h1>
-          <p class="muted">Website Developer — Dubai, UAE</p>
-        </div>
-      </a>
-
-      <nav class="desktop" aria-label="Primary navigation">
-        <a class="active" href="#about">Home</a>
+      <div class="logo">
+        <img src="image.jpg" alt="NK. Noah Profile">
+      </div>
+      <nav>
+        <a href="#about">About</a>
         <a href="#services">Services</a>
-        <a href="#work">Work</a>
-        <a href="#values">Values</a>
+        <a href="#values">Core Values</a>
         <a href="#contact">Contact</a>
       </nav>
-
-      <button class="hamburger" id="hambtn" aria-label="Open menu" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
-      </button>
     </header>
 
-    <main id="main">
-      <section class="hero">
-        <!-- left column -->
-        <aside class="card profile" aria-labelledby="profile-heading">
-          <div class="photo" aria-hidden="false">
-            <img src="image.jpg" alt="NK. Noah — profile photo">
-          </div>
+    <div class="profile-card">
+      <img src="image.jpg" alt="NK. Noah Profile">
+      <h1>NK. Noah</h1>
+      <p>Website Developer — Dubai, UAE</p>
+      <div class="badges">
+        <span class="badge">12+ Projects</span>
+        <span class="badge">5+ Countries</span>
+        <span class="badge">3+ Languages</span>
+      </div>
+      <p>Web & App Developer, Designer, and Creative Director building responsive digital experiences focused on purpose and people.</p>
+    </div>
 
-          <div class="info" id="profile-heading">
-            <h2>NK. Noah</h2>
-            <div class="meta">Role: Website Developer • Location: Dubai, UAE</div>
-            <div class="badges" aria-hidden="true">
-              <span class="badge">12+ Projects</span>
-              <span class="badge">5+ Countries</span>
-              <span class="badge">3+ Languages</span>
-            </div>
-            <div style="margin-top:10px;color:var(--muted);font-size:14px">
-              <strong>Quick intro</strong>
-              <p style="margin:8px 0 0">Web & App Developer, Designer, and Creative Director. I build responsive digital experiences focused on purpose and people.</p>
-            </div>
-          </div>
+    <div class="section">
+      <section id="about">
+        <h2>About Me</h2>
+        <p>I have completed more than 12 projects in over 5 countries and 3 languages, delivering high-quality websites and applications with a Christ-centered approach.</p>
+      </section>
 
-          <div style="display:flex;gap:8px;margin-top:8px">
-            <a href="#contact" class="btn">Let's talk</a>
-            <a href="#work" class="btn alt">View work</a>
-          </div>
-
-          <hr class="sep">
-
-          <div class="card muted" style="padding:12px;background:linear-gradient(180deg,#fbfdff,#fff);border-radius:10px">
-            <strong>Contact</strong>
-            <div class="muted" style="margin-top:8px">Based in Dubai, United Arab Emirates</div>
-            <div class="muted" style="margin-top:6px">Available for freelance & collaborations</div>
-          </div>
-
-        </aside>
-
-        <!-- right column -->
-        <div class="card content">
-          <section id="about" class="section">
-            <h3>About</h3>
-            <p class="muted">I’ve worked across industries and countries to craft digital experiences that make an impact. My approach is collaborative, clear, and thoughtful: the best digital solutions come from understanding people and purpose.</p>
-
-            <div class="counters" style="margin-top:12px">
-              <div class="counter" aria-hidden="false">
-                <div class="num" data-target="12">0</div>
-                <div class="label">projects</div>
-              </div>
-              <div class="counter">
-                <div class="num" data-target="5">0</div>
-                <div class="label">countries</div>
-              </div>
-              <div class="counter">
-                <div class="num" data-target="3">0</div>
-                <div class="label">languages</div>
-              </div>
-            </div>
-          </section>
-
-          <section id="services" class="section">
-            <h3>Services I Provide</h3>
-            <div class="services" role="list">
-              <div class="service" role="listitem">
-                <h4>Web Development</h4>
-                <p class="muted">Responsive, fast, and user-friendly websites built with modern practices for scalability and reliability.</p>
-              </div>
-              <div class="service" role="listitem">
-                <h4>App Development</h4>
-                <p class="muted">Mobile apps for iOS & Android focused on smooth functionality, UX, and performance.</p>
-              </div>
-              <div class="service" role="listitem">
-                <h4>UI / UX Design</h4>
-                <p class="muted">Intuitive interfaces and UX flows that help users complete tasks quickly and joyfully.</p>
-              </div>
-              <div class="service" role="listitem">
-                <h4>Creative Direction</h4>
-                <p class="muted">End-to-end creative strategy, branding, and storytelling to align design with goals.</p>
-              </div>
-              <div class="service" role="listitem">
-                <h4>SEO & Digital Strategy</h4>
-                <p class="muted">Optimisation and strategy to increase discoverability and attract the right audience.</p>
-              </div>
-              <div class="service" role="listitem">
-                <h4>Support & Maintenance</h4>
-                <p class="muted">Ongoing updates, security checks and incremental improvements after launch.</p>
-              </div>
-            </div>
-          </section>
-
-          <section id="work" class="section process">
-            <h3>Working Process</h3>
-            <h4>1. Discovery & Planning</h4>
-            <p class="muted">We start with goals, audience and priorities. Research, consultation and a clear roadmap set the direction.</p>
-
-            <h4>2. Design & Development</h4>
-            <p class="muted">Wireframes and UI prototypes evolve into production code using HTML, CSS, JavaScript, and modern frameworks when needed.</p>
-
-            <h4>3. Testing, Delivery & Support</h4>
-            <p class="muted">Thorough testing, cross-platform checks, and post-launch support to keep things running smoothly.</p>
-          </section>
-
-          <section id="values" class="section">
-            <h3>Core Values</h3>
-            <div class="values" aria-live="polite">
-              <div class="value">Transparent and Truth-Driven</div>
-              <div class="value">Collaborative and Humble</div>
-              <div class="value">Audacious and Growth-Oriented</div>
-              <div class="value">Faithful and Christ-Centered</div>
-              <div class="value">Servant-Hearted and Compassionate</div>
-              <div class="value">Integrity and Stewardship</div>
-              <div class="value">Purpose-Driven and Spirit-Led</div>
-              <div class="value">Excellence with Grace</div>
-            </div>
-          </section>
-
-          <section id="contact" class="section">
-            <h3>Contact</h3>
-            <div class="contact">
-              <form id="contactForm" onsubmit="return false;" aria-label="Contact form">
-                <input type="text" id="name" placeholder="Your name" value="NK. Noah" required />
-                <input type="email" id="email" placeholder="Email (optional)" />
-                <textarea id="message" placeholder="Brief message or project idea"></textarea>
-                <div style="display:flex;gap:8px">
-                  <button class="btn" onclick="fakeSend()">Send message</button>
-                  <button class="btn alt" type="button" onclick="downloadVCard()">Download vCard</button>
-                </div>
-              </form>
-
-              <div class="map card" style="min-height:180px">
-                <iframe loading="lazy" src="https://maps.google.com/maps?q=Dubai&t=m&z=10&output=embed&iwloc=near" title="Dubai location" aria-label="Dubai location"></iframe>
-              </div>
-            </div>
-          </section>
-
+      <section id="services">
+        <h2>Services</h2>
+        <div class="services">
+          <div class="service">Web Development</div>
+          <div class="service">App Development</div>
+          <div class="service">UI/UX Design</div>
+          <div class="service">Creative Direction</div>
+          <div class="service">SEO & Digital Strategy</div>
+          <div class="service">Support & Maintenance</div>
         </div>
       </section>
 
-      <footer role="contentinfo" aria-label="Site footer">
-        <div style="display:flex;gap:12px;align-items:center">
-          <small class="muted">NK. Noah — Website Developer</small>
+      <section id="values">
+        <h2>Core Values</h2>
+        <div class="values">
+          <div class="value">Transparent and Truth-Driven</div>
+          <div class="value">Collaborative and Humble</div>
+          <div class="value">Audacious and Growth-Oriented</div>
+          <div class="value">Faithful and Christ-Centered</div>
+          <div class="value">Servant-Hearted and Compassionate</div>
+          <div class="value">Integrity and Stewardship</div>
+          <div class="value">Purpose-Driven and Spirit-Led</div>
+          <div class="value">Excellence with Grace</div>
         </div>
-        <div class="muted">Copyright © 2025 Noah</div>
-      </footer>
+      </section>
 
-    </main>
-  </div>
-
-  <!-- Mobile drawer -->
-  <div class="drawer" id="drawer" aria-hidden="true">
-    <div class="sheet" role="dialog" aria-modal="true" aria-label="Mobile menu">
-      <button class="close" id="closeDrawer" aria-label="Close menu">Close ✕</button>
-      <nav>
-        <a href="#about" onclick="closeDrawer()">Home</a>
-        <a href="#services" onclick="closeDrawer()">Services</a>
-        <a href="#work" onclick="closeDrawer()">Work</a>
-        <a href="#values" onclick="closeDrawer()">Values</a>
-        <a href="#contact" onclick="closeDrawer()">Contact</a>
-      </nav>
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: your-email@example.com</p>
+        <p>Location: Dubai, UAE</p>
+      </section>
     </div>
   </div>
 
-  <script>
-    // mobile drawer
-    const hambtn = document.getElementById('hambtn');
-    const drawer = document.getElementById('drawer');
-    const closeBtn = document.getElementById('closeDrawer');
+  <footer>
+    Copyright © 2025 Noah
+  </footer>
 
-    function openDrawer(){
-      drawer.classList.add('open');
-      drawer.setAttribute('aria-hidden','false');
-      hambtn.setAttribute('aria-expanded','true');
-    }
-    function closeDrawer(){
-      drawer.classList.remove('open');
-      drawer.setAttribute('aria-hidden','true');
-      hambtn.setAttribute('aria-expanded','false');
-    }
-    hambtn.addEventListener('click', () => {
-      drawer.classList.contains('open') ? closeDrawer() : openDrawer();
-    });
-    closeBtn.addEventListener('click', closeDrawer);
-
-    // animate counters
-    function animateCounters(){
-      document.querySelectorAll('.num').forEach(el => {
-        const target = +el.getAttribute('data-target') || 0;
-        const duration = 1300;
-        const start = 0;
-        const stepTime = Math.max(16, Math.floor(duration / Math.max(1,target)));
-        let current = start;
-        const step = () => {
-          current += 1;
-          el.textContent = current + (target>=10 && el === document.querySelectorAll('.num')[0] ? '+' : '');
-          if (current < target) {
-            setTimeout(step, stepTime);
-          } else {
-            // ensure suffix plus for first two counters if needed
-            if(el.dataset.target === '12') el.textContent = '12+';
-            if(el.dataset.target === '5') el.textContent = '5+';
-            if(el.dataset.target === '3') el.textContent = '3+';
-          }
-        };
-        step();
-      });
-    }
-    // run on load and when visible
-    window.addEventListener('load', () => {
-      // small delay to look nicer
-      setTimeout(animateCounters, 400);
-    });
-
-    // fake send for demo
-    function fakeSend(){
-      const btn = event.target;
-      btn.disabled = true;
-      btn.textContent = 'Sending...';
-      setTimeout(()=> {
-        alert('Message ready to send — fill email server or your contact flow. (Demo)');
-        btn.disabled = false;
-        btn.textContent = 'Send message';
-      }, 900);
-    }
-
-    // create and download simple vCard for quick contact (client side)
-    function downloadVCard(){
-      const vcard = [
-        'BEGIN:VCARD',
-        'VERSION:3.0',
-        'FN:NK. Noah',
-        'N:Noah;NK;;;',
-        'TITLE:Website Developer',
-        'EMAIL;TYPE=INTERNET:',
-        'ADR;TYPE=WORK:;;Dubai;Dubai;UAE;;',
-        'END:VCARD'
-      ].join('\\r\\n');
-      const blob = new Blob([vcard], {type:'text/vcard'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'Noah.vcf';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-    }
-
-    // keyboard accessibility: close drawer on Escape
-    document.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
-    });
-
-    // small helper: smooth scroll for anchors
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', function(e){
-        const href = this.getAttribute('href');
-        if(href.length>1){
-          e.preventDefault();
-          const el = document.querySelector(href);
-          if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-          closeDrawer();
-        }
-      });
-    });
-
-    // If image.jpg is missing, show a very subtle fallback
-    (function checkImage(){
-      const img = document.querySelector('.photo img');
-      img.onerror = function(){ this.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="100%" height="100%" fill="%23e6eefc"/><text x="50%" y="50%" text-anchor="middle" fill="%23045cb4" font-family="Arial" font-size="20">image.jpg not found</text></svg>' };
-    })();
-  </script>
+  <!-- News ticker -->
+  <div class="news-ticker">
+    <h3>News</h3>
+    <div class="news-items">
+      <p>Project A launched in UAE</p>
+      <p>New collaboration in 3 countries</p>
+      <p>Website redesign completed for Client B</p>
+      <p>Learning latest JavaScript frameworks</p>
+      <p>Optimizing SEO for top results</p>
+      <p>Project A launched in UAE</p>
+      <p>New collaboration in 3 countries</p>
+    </div>
+  </div>
 </body>
 </html>
