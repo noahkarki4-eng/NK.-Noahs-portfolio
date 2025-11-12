@@ -1,262 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NK. Noah — Personal Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NK Noah - Portfolio</title>
 <style>
+  /* ---------- Root Colors ---------- */
   :root {
-    --c1:#e36414;
-    --c2:#118ab2;
-    --c3:#335c67;
-    --c4:#83c5be;
-    --c5:#f4f0bb;
-    --c6:#f77f00;
-    --c7:#00f5d4;
-    --c8:#efd6ac;
-    --bg:#f4f4f9;
-    --text:#0f1724;
-    --shadow:0 8px 24px rgba(0,0,0,0.08);
-    --radius:12px;
-    font-family: Arial, sans-serif;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    background:var(--bg);
-    color:var(--text);
-    display:flex;
-    justify-content:center;
-    min-height:100vh;
-    font-size:16px;
-    line-height:1.5;
-  }
-  .container{
-    max-width:1200px;
-    width:100%;
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-    padding:20px;
-  }
-  header{
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:10px 0;
-  }
-  .logo img{
-    width:80px;
-    height:80px;
-    border-radius:var(--radius);
-    object-fit:cover;
-    box-shadow:var(--shadow);
-  }
-  nav a{
-    text-decoration:none;
-    margin-left:15px;
-    font-weight:600;
-    color:var(--c2);
-  }
-  .profile-card{
-    flex:1;
-    min-width:300px;
-    background:#fff;
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    padding:20px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-  }
-  .profile-card img{
-    width:100%;
-    max-width:250px;
-    border-radius:var(--radius);
-    margin-bottom:15px;
-  }
-  .profile-card h1{margin-bottom:8px;font-size:24px;color:var(--c3);}
-  .profile-card p{margin-bottom:10px;color:var(--c4);}
-  .badges{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    justify-content:center;
-    margin-bottom:15px;
-  }
-  .badge{
-    background:var(--c5);
-    color:var(--c6);
-    font-weight:700;
-    padding:6px 12px;
-    border-radius:20px;
-    font-size:14px;
-  }
-  .section{
-    flex:2;
-    min-width:500px;
-    background:#fff;
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    padding:20px;
-    position:relative;
-  }
-  .section h2{margin-bottom:10px;color:var(--c2);}
-  .section p{margin-bottom:10px;color:var(--c3);}
-  .services, .values{
-    display:grid;
-    gap:10px;
-  }
-  .services{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
-  .service{
-    background:var(--c4);
-    color:#fff;
-    border-radius:var(--radius);
-    padding:10px;
-    font-weight:600;
-  }
-  .values{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:10px;}
-  .value{
-    background:var(--c7);
-    color:#000;
-    border-radius:var(--radius);
-    padding:8px;
-    font-weight:600;
-    text-align:center;
-  }
-  footer{
-    width:100%;
-    text-align:center;
-    margin-top:20px;
-    padding:10px;
-    color:var(--c3);
+    --orange: #f77f00;
+    --blue-dark: #335c67;
+    --blue-light: #118ab2;
+    --teal: #83c5be;
+    --beige: #f4f0bb;
+    --aqua: #00f5d4;
+    --tan: #efd6ac;
+    --red: #e36414;
   }
 
-  /* right-side news ticker */
-  .news-ticker{
-    position:fixed;
-    top:0;
-    right:0;
-    width:200px;
-    height:50%;
-    background:#fff;
-    border-left:3px solid var(--c6);
-    overflow:hidden;
-    padding:10px;
-    box-shadow:var(--shadow);
-    display:flex;
-    flex-direction:column;
-    justify-content:start;
-  }
-  .news-ticker h3{
-    font-size:16px;
-    color:var(--c2);
-    margin-bottom:10px;
-  }
-  .news-items{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    animation:scrollNews 20s linear infinite;
-  }
-  .news-items p{
-    font-size:14px;
-    color:var(--c3);
-  }
-  @keyframes scrollNews{
-    0%{transform:translateY(0);}
-    100%{transform:translateY(-100%);}
+  /* ---------- Reset ---------- */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
   }
 
-  /* responsive */
-  @media(max-width:900px){
-    .container{flex-direction:column;}
-    .news-ticker{position:relative;width:100%;height:auto;border-left:none;border-top:3px solid var(--c6);}
+  body {
+    background: var(--beige);
+    color: var(--blue-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* ---------- Layout ---------- */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    background: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .main {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--orange);
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: var(--red);
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    color: var(--blue-dark);
+  }
+
+  .info, .core-values {
+    margin-top: 20px;
+  }
+
+  .info p, .core-values p {
+    line-height: 1.7;
+  }
+
+  .core-values ul {
+    margin-top: 10px;
+    list-style: none;
+    padding-left: 10px;
+  }
+
+  .core-values li {
+    margin-bottom: 6px;
+    background: var(--teal);
+    color: var(--blue-dark);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 500;
+  }
+
+  /* ---------- News Widget ---------- */
+  .news {
+    background: var(--blue-light);
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .news h3 {
+    text-align: center;
+    background: var(--orange);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .news ul {
+    list-style: none;
+    animation: scrollNews 15s linear infinite;
+  }
+
+  .news li {
+    margin: 10px 0;
+    padding: 10px;
+    background: var(--aqua);
+    color: var(--blue-dark);
+    border-radius: 8px;
+    font-weight: 500;
+  }
+
+  @keyframes scrollNews {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(-100%); }
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    text-align: center;
+    padding: 10px;
+    background: var(--tan);
+    font-size: 0.9rem;
+    color: var(--blue-dark);
+    border-top: 2px solid var(--blue-dark);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px) {
+    .container {
+      grid-template-columns: 1fr;
+      height: auto;
+    }
+
+    .news {
+      display: none;
+    }
+
+    .main {
+      height: auto;
+      overflow: visible;
+      padding: 20px;
+    }
   }
 </style>
 </head>
 <body>
   <div class="container">
-    <header>
-      <div class="logo">
-        <img src="image.jpg" alt="NK. Noah Profile">
+    <div class="main">
+      <div class="header">
+        <img src="image.jpg" alt="Profile Picture">
+        <div>
+          <h1>NK. Noah</h1>
+          <h2>Website Developer | Dubai, UAE</h2>
+        </div>
       </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#values">Core Values</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
 
-    <div class="profile-card">
-      <img src="image.jpg" alt="NK. Noah Profile">
-      <h1>NK. Noah</h1>
-      <p>Website Developer — Dubai, UAE</p>
-      <div class="badges">
-        <span class="badge">12+ Projects</span>
-        <span class="badge">5+ Countries</span>
-        <span class="badge">3+ Languages</span>
+      <div class="info">
+        <p><strong>Achievements:</strong> Completed more than 12 projects in over 5 countries, working in more than 3 languages.</p>
       </div>
-      <p>Web & App Developer, Designer, and Creative Director building responsive digital experiences focused on purpose and people.</p>
+
+      <div class="core-values">
+        <h2>My Core Values</h2>
+        <ul>
+          <li>Transparent and Truth-Driven</li>
+          <li>Collaborative and Humble</li>
+          <li>Audacious and Growth-Oriented</li>
+          <li>Faithful and Christ-Centered</li>
+          <li>Servant-Hearted and Compassionate</li>
+          <li>Integrity and Stewardship</li>
+          <li>Purpose-Driven and Spirit-Led</li>
+          <li>Excellence with Grace</li>
+        </ul>
+      </div>
+
+      <footer>
+        Copyright © 2025 Noah
+      </footer>
     </div>
 
-    <div class="section">
-      <section id="about">
-        <h2>About Me</h2>
-        <p>I have completed more than 12 projects in over 5 countries and 3 languages, delivering high-quality websites and applications with a Christ-centered approach.</p>
-      </section>
-
-      <section id="services">
-        <h2>Services</h2>
-        <div class="services">
-          <div class="service">Web Development</div>
-          <div class="service">App Development</div>
-          <div class="service">UI/UX Design</div>
-          <div class="service">Creative Direction</div>
-          <div class="service">SEO & Digital Strategy</div>
-          <div class="service">Support & Maintenance</div>
-        </div>
-      </section>
-
-      <section id="values">
-        <h2>Core Values</h2>
-        <div class="values">
-          <div class="value">Transparent and Truth-Driven</div>
-          <div class="value">Collaborative and Humble</div>
-          <div class="value">Audacious and Growth-Oriented</div>
-          <div class="value">Faithful and Christ-Centered</div>
-          <div class="value">Servant-Hearted and Compassionate</div>
-          <div class="value">Integrity and Stewardship</div>
-          <div class="value">Purpose-Driven and Spirit-Led</div>
-          <div class="value">Excellence with Grace</div>
-        </div>
-      </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: your-email@example.com</p>
-        <p>Location: Dubai, UAE</p>
-      </section>
-    </div>
-  </div>
-
-  <footer>
-    Copyright © 2025 Noah
-  </footer>
-
-  <!-- News ticker -->
-  <div class="news-ticker">
-    <h3>News</h3>
-    <div class="news-items">
-      <p>Project A launched in UAE</p>
-      <p>New collaboration in 3 countries</p>
-      <p>Website redesign completed for Client B</p>
-      <p>Learning latest JavaScript frameworks</p>
-      <p>Optimizing SEO for top results</p>
-      <p>Project A launched in UAE</p>
-      <p>New collaboration in 3 countries</p>
+    <div class="news">
+      <h3>Latest Updates</h3>
+      <ul>
+        <li>Launched new responsive portfolio template.</li>
+        <li>Working on a global client project.</li>
+        <li>Expanding skillset in AI-integrated web apps.</li>
+        <li>Exploring UI/UX design best practices.</li>
+        <li>Collaborating with developers worldwide.</li>
+      </ul>
     </div>
   </div>
 </body>
