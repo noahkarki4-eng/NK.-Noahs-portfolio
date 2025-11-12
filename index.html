@@ -3,21 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>NK Noah - Portfolio</title>
+<title>NK Noah | Website Developer</title>
 <style>
-  /* ---------- Root Colors ---------- */
   :root {
-    --orange: #f77f00;
-    --blue-dark: #335c67;
-    --blue-light: #118ab2;
-    --teal: #83c5be;
-    --beige: #f4f0bb;
-    --aqua: #00f5d4;
-    --tan: #efd6ac;
-    --red: #e36414;
+    --primary: #118ab2;
+    --accent: #f77f00;
+    --dark: #335c67;
+    --light: #f4f0bb;
+    --soft: #83c5be;
+    --highlight: #00f5d4;
+    --deep: #e36414;
+    --cream: #efd6ac;
   }
 
-  /* ---------- Reset ---------- */
   * {
     margin: 0;
     padding: 0;
@@ -26,114 +24,135 @@
   }
 
   body {
-    background: var(--beige);
-    color: var(--blue-dark);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  /* ---------- Layout ---------- */
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    background: white;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  .main {
-    padding: 40px;
+    background: var(--light);
+    color: var(--dark);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    overflow-y: auto;
+    min-height: 100vh;
   }
 
-  .header {
+  header {
+    background: var(--primary);
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  nav a:hover {
+    color: var(--highlight);
+  }
+
+  /* Hero Section */
+  .hero {
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+    background: linear-gradient(to right, var(--soft), var(--cream));
+    padding: 60px 30px;
+    flex-wrap: wrap;
+    gap: 30px;
   }
 
-  .header img {
-    width: 120px;
-    height: 120px;
+  .hero img {
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
+    border: 5px solid var(--accent);
     object-fit: cover;
-    border: 4px solid var(--orange);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   }
 
-  h1 {
+  .hero-text {
+    max-width: 500px;
+  }
+
+  .hero-text h2 {
     font-size: 2rem;
-    color: var(--red);
+    color: var(--deep);
   }
 
-  h2 {
-    font-size: 1.3rem;
-    color: var(--blue-dark);
-  }
-
-  .info, .core-values {
-    margin-top: 20px;
-  }
-
-  .info p, .core-values p {
-    line-height: 1.7;
-  }
-
-  .core-values ul {
+  .hero-text p {
     margin-top: 10px;
-    list-style: none;
-    padding-left: 10px;
+    line-height: 1.6;
+    font-size: 1.1rem;
   }
 
-  .core-values li {
-    margin-bottom: 6px;
-    background: var(--teal);
-    color: var(--blue-dark);
-    padding: 8px 12px;
+  /* Main Content */
+  .main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 40px;
+    background: white;
+    flex-grow: 1;
+  }
+
+  .content {
+    padding-right: 20px;
+  }
+
+  .content h3 {
+    color: var(--deep);
+    margin-bottom: 10px;
+  }
+
+  .values ul {
+    list-style: none;
+    margin-top: 10px;
+  }
+
+  .values li {
+    background: var(--soft);
+    margin-bottom: 8px;
+    padding: 10px 15px;
     border-radius: 8px;
     font-weight: 500;
   }
 
-  /* ---------- News Widget ---------- */
+  /* News Widget */
   .news {
-    background: var(--blue-light);
+    background: var(--primary);
     color: white;
+    border-radius: 10px;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: relative;
     overflow: hidden;
+    height: 400px;
+    position: relative;
   }
 
-  .news h3 {
+  .news h4 {
     text-align: center;
-    background: var(--orange);
-    padding: 10px;
-    border-radius: 8px;
     margin-bottom: 10px;
+    background: var(--accent);
+    padding: 8px;
+    border-radius: 8px;
   }
 
   .news ul {
     list-style: none;
-    animation: scrollNews 15s linear infinite;
+    animation: scrollNews 18s linear infinite;
   }
 
   .news li {
-    margin: 10px 0;
+    background: var(--highlight);
+    color: var(--dark);
+    margin-bottom: 12px;
     padding: 10px;
-    background: var(--aqua);
-    color: var(--blue-dark);
-    border-radius: 8px;
+    border-radius: 6px;
     font-weight: 500;
   }
 
@@ -142,52 +161,75 @@
     100% { transform: translateY(-100%); }
   }
 
-  /* ---------- Footer ---------- */
+  /* Footer */
   footer {
+    background: var(--cream);
     text-align: center;
-    padding: 10px;
-    background: var(--tan);
-    font-size: 0.9rem;
-    color: var(--blue-dark);
-    border-top: 2px solid var(--blue-dark);
+    padding: 15px;
+    color: var(--dark);
+    border-top: 2px solid var(--dark);
   }
 
-  /* ---------- Responsive ---------- */
+  /* Responsive */
   @media (max-width: 900px) {
-    .container {
+    .main {
       grid-template-columns: 1fr;
-      height: auto;
     }
 
     .news {
-      display: none;
+      height: 250px;
+      margin-top: 20px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    header {
+      flex-direction: column;
+      text-align: center;
     }
 
-    .main {
-      height: auto;
-      overflow: visible;
-      padding: 20px;
+    nav {
+      margin-top: 10px;
+    }
+
+    .hero {
+      padding: 40px 20px;
+    }
+
+    .hero img {
+      width: 140px;
+      height: 140px;
+    }
+
+    .hero-text h2 {
+      font-size: 1.5rem;
     }
   }
 </style>
 </head>
 <body>
-  <div class="container">
-    <div class="main">
-      <div class="header">
-        <img src="image.jpg" alt="Profile Picture">
-        <div>
-          <h1>NK. Noah</h1>
-          <h2>Website Developer | Dubai, UAE</h2>
-        </div>
-      </div>
+  <header>
+    <h1>NK Noah</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Projects</a>
+      <a href="#">Values</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
-      <div class="info">
-        <p><strong>Achievements:</strong> Completed more than 12 projects in over 5 countries, working in more than 3 languages.</p>
-      </div>
+  <section class="hero">
+    <img src="image.jpg" alt="Noah Profile Picture">
+    <div class="hero-text">
+      <h2>Website Developer | Dubai, UAE</h2>
+      <p>Completed more than 12 projects across 5 countries in over 3 languages. Passionate about building purposeful, user-centered digital experiences.</p>
+    </div>
+  </section>
 
-      <div class="core-values">
-        <h2>My Core Values</h2>
+  <section class="main">
+    <div class="content">
+      <h3>My Core Values</h3>
+      <div class="values">
         <ul>
           <li>Transparent and Truth-Driven</li>
           <li>Collaborative and Humble</li>
@@ -199,22 +241,22 @@
           <li>Excellence with Grace</li>
         </ul>
       </div>
-
-      <footer>
-        Copyright © 2025 Noah
-      </footer>
     </div>
 
-    <div class="news">
-      <h3>Latest Updates</h3>
+    <aside class="news">
+      <h4>Latest Updates</h4>
       <ul>
-        <li>Launched new responsive portfolio template.</li>
-        <li>Working on a global client project.</li>
-        <li>Expanding skillset in AI-integrated web apps.</li>
-        <li>Exploring UI/UX design best practices.</li>
-        <li>Collaborating with developers worldwide.</li>
+        <li>Launched new responsive portfolio layout.</li>
+        <li>Collaborating on global WordPress-style web projects.</li>
+        <li>Exploring AI-powered web tools.</li>
+        <li>Focusing on spiritual and professional growth.</li>
+        <li>Building for impact with excellence and grace.</li>
       </ul>
-    </div>
-  </div>
+    </aside>
+  </section>
+
+  <footer>
+    Copyright © 2025 Noah
+  </footer>
 </body>
 </html>
