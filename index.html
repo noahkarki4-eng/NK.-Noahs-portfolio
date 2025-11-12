@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NK Noah - Personal Portfolio</title>
+<style>
+  :root {
+    --orange: #e36414;
+    --blue: #118ab2;
+    --dark-blue: #335c67;
+    --teal: #83c5be;
+    --cream: #f4f0bb;
+    --amber: #f77f00;
+    --mint: #00f5d4;
+    --sand: #efd6ac;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: var(--cream);
+    color: var(--dark-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  header {
+    background: linear-gradient(135deg, var(--blue), var(--teal));
+    color: white;
+    width: 100%;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .container {
+    max-width: 1000px;
+    width: 95%;
+    margin: 2rem auto;
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  img.profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid var(--orange);
+    margin-bottom: 1rem;
+    object-fit: cover;
+  }
+
+  h2 {
+    color: var(--blue);
+    border-bottom: 2px solid var(--mint);
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .value {
+    background: var(--sand);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .value h4 {
+    margin: 0 0 0.5rem;
+    color: var(--orange);
+  }
+
+  footer {
+    width: 100%;
+    background: var(--dark-blue);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 0;
+  }
+
+  /* Scrolling News Widget */
+  .news-widget {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 220px;
+    height: 100%;
+    background: var(--f4f0bb);
+    color: var(--dark-blue);
+    border-left: 4px solid var(--orange);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .news-title {
+    background: var(--orange);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.5rem;
+  }
+
+  .news-content {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .news-scroll {
+    position: absolute;
+    width: 100%;
+    animation: scrollNews 15s linear infinite;
+  }
+
+  @keyframes scrollNews {
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: -100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .news-widget {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>NK Noah - Web Developer</h1>
+  </header>
+
+  <div class="container">
+    <img src="image.jpg" alt="NK Noah" class="profile" />
+    <h2>About Me</h2>
+    <p><strong>Name:</strong> NK Noah<br />
+       <strong>Address:</strong> Dubai, UAE<br />
+       <strong>Role:</strong> Website Developer</p>
+
+    <p>I have completed more than 12 projects in over 5 countries and work fluently across 3 languages. My passion lies in crafting creative, functional, and purpose-driven digital experiences.</p>
+
+    <h2>Core Values</h2>
+    <div class="values">
+      <div class="value"><h4>Transparent and Truth-Driven</h4></div>
+      <div class="value"><h4>Collaborative and Humble</h4></div>
+      <div class="value"><h4>Audacious and Growth-Oriented</h4></div>
+      <div class="value"><h4>Faithful and Christ-Centered</h4></div>
+      <div class="value"><h4>Servant-Hearted and Compassionate</h4></div>
+      <div class="value"><h4>Integrity and Stewardship</h4></div>
+      <div class="value"><h4>Purpose-Driven and Spirit-Led</h4></div>
+      <div class="value"><h4>Excellence with Grace</h4></div>
+    </div>
+  </div>
+
+  <div class="news-widget">
+    <div class="news-title">Latest Updates</div>
+    <div class="news-content">
+      <div class="news-scroll">
+        <p>✅ New project completed for a UAE client!</p>
+        <p>🌍 Expanding web development services to 2 more countries.</p>
+        <p>💡 Learning advanced AI-integrated web design tools.</p>
+        <p>🙏 Focused on faith, growth, and purpose-driven work.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Copyright © 2025 Noah
+  </footer>
+</body>
+</html>
