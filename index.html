@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width,initial-scale=1" /> 
 <title>Noah Portfolio</title>
 <meta name="description" content=" Noah web.Developer, Dubai. Portfolio, core values, projects and contact." />
 <style>
@@ -18,12 +18,12 @@
     --p6:#f77f00; /* accent orange */
     --p7:#00f5d4; /* bright aqua */
     --p8:#efd6ac; /* tan */
-    --bg: #e9ecef; /* main page card bg */
-    --page-bg: linear-gradient(180deg,#247ba0 0%, #247ba0 100%);
+    --bg: #ffffff; /* main page card bg */
+    --page-bg: linear-gradient(180deg,#fbfdfc 0%, #fcfbf2 100%);
     --text: #0f1724;
     --muted: #566173;
     --radius: 14px;
-    --container-max:1800px;
+    --container-max:1200px;
     --shadow: 0 12px 40px rgba(15,23,36,0.08);
     --glass: rgba(255,255,255,0.65);
     --gap:18px;
@@ -164,8 +164,6 @@
 
   /* process */
   .process h4{margin:10px 0 6px}
-  .process a{display:inline-block;color:var(--p3);text-decoration:none;font-weight:700}
-  .process a:hover{color:var(--p2)}
 
   /* values grid with icons */
   .values-grid{
@@ -240,41 +238,8 @@
   /* utility */
   .sr-only{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
   a.no-deco{color:inherit;text-decoration:none}
-
-  /* gallery */
-  .gallery{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px
-  }
-  .gallery img{width:100%;height:150px;object-fit:cover;border-radius:10px;cursor:pointer;display:block}
-  /* lightbox */
-  .lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.7);z-index:2000}
-  .lightbox img{max-width:92%;max-height:85%;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
-  .lightbox.show{display:flex}
-
-  /* testimonials carousel */
-  .testimonials{position:relative;overflow:hidden;margin-top:14px;border-radius:12px}
-  .test-track{display:flex;transition:transform .6s cubic-bezier(.2,.9,.28,1);gap:12px}
-  .testimonial{min-width:300px;padding:18px;background:linear-gradient(180deg,#fff,#fbfdff);border-radius:12px;border:1px solid rgba(15,23,36,0.04)}
-  .testimonial p{margin:0;color:var(--muted)}
-  .testimonial .who{margin-top:10px;font-weight:800;color:var(--p3)}
-  .test-controls{display:flex;gap:8px;justify-content:center;margin-top:10px}
-  .dot{width:10px;height:10px;border-radius:50%;background:#ddd;cursor:pointer}
-  .dot.active{background:var(--p2)}
-
-  /* motion hover for testimonials */
-  .testimonial:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(15,23,36,0.06)}
-
-  /* responsive gallery */
-  @media (max-width:820px){.gallery{grid-template-columns:repeat(2,1fr)} .testimonial{min-width:260px}}
-
 </style>
-
-
-
 </head>
-
-
-  
 <body>
   <div class="stage" role="document" aria-label="Noah portfolio">
 
@@ -289,9 +254,6 @@
       </a>
 
       <nav class="primary" role="navigation" aria-label="Primary">
-
-
-        
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#work">Work</a>
@@ -327,18 +289,13 @@
 
                   <div style="margin-top:10px;color:var(--muted);font-size:14px">
                     <strong>About</strong>
-                    <p style="margin:8px 0 0"> I’m a Full Stack WordPress Developer and Creative Director based in Dubai. 
-                      Over the years, I’ve worked on diverse digital projects, collaborating with clients from various industries and countries.
-                      These experiences have deepened my understanding of how technology,
-                      creativity, and strategy come together to create meaningful and effective digital experiences.My work centers on building clean,
-                      functional, and visually engaging WordPress websites that align with each client’s goals. 
-                      I specialize in custom theme and plugin development, UI/UX design, 
-                      and creative direction always aiming to merge innovation with simplicity and purpose.
-                      I believe that great digital solutions are built through trust, collaboration, and attention to detail.
-                      Every project I take on is guided by these principles, ensuring that each site not only looks great but also performs seamlessly
-                      and delivers lasting value. I’m always open to partnering with clients and creative teams worldwide.
-                      Whether you’re launching a new website or refining an existing one,
-                      I’d be glad to help bring your vision to life through thoughtful design and solid development.</p>
+                    <p style="margin:8px 0 0"> I’m a Full Stack WordPress Developer and Creative Director based in Dubai. Over the years, I’ve worked on diverse digital projects, collaborating with clients from various industries and countries. These experiences have deepened my understanding of how technology, creativity, and strategy come together to create meaningful and effective digital experiences.
+
+My work centers on building clean, functional, and visually engaging WordPress websites that align with each client’s goals. I specialize in custom theme and plugin development, UI/UX design, and creative direction—always aiming to merge innovation with simplicity and purpose.
+
+I believe that great digital solutions are built through trust, collaboration, and attention to detail. Every project I take on is guided by these principles, ensuring that each site not only looks great but also performs seamlessly and delivers lasting value.
+
+I’m always open to partnering with clients and creative teams worldwide. Whether you’re launching a new website or refining an existing one, I’d be glad to help bring your vision to life through thoughtful design and solid development.</p>
                   </div>
 
                   <div class="cta-row" style="margin-top:12px">
@@ -351,34 +308,28 @@
 
             <div class="card" style="padding:18px;">
               <h3 id="services">Services I Provide</h3>
-              <p class="muted"> I offer a complete range of digital services, including responsive web and WordPress development,
-                user-centered UI/UX, creative direction, and performance-driven SEO. I approach every project with clarity and purpose, 
-                aiming to build tools that not only look good but also work consistently and help clients achieve meaningful results.
-                Each solution is crafted for durability, scalability, and a strong online presence. </p>
+              <p class="muted">I provide professional digital solutions in web & WordPress development, UI/UX, creative direction, and SEO  engineered for results and durability.</p>
 
               <div class="services" aria-label="Services list">
-                <a class="service no-deco" href="#service-web"><h4>Web Development</h4><p class="muted">Responsive, fast, SEO-ready websites.</p></a>
-                <a class="service no-deco" href="#service-app"><h4>App Development</h4><p class="muted"> Initializing…... </p></a>
-                <a class="service no-deco" href="#service-ui"><h4>UI / UX</h4><p class="muted">User-focused interfaces and flows.</p></a>
-                <a class="service no-deco" href="#service-creative"><h4>Creative Direction</h4><p class="muted">Brand, content & design strategy.</p></a>
-                <a class="service no-deco" href="#service-seo"><h4>SEO & Strategy</h4><p class="muted">Growth-focused optimization and content planning.</p></a>
-                <a class="service no-deco" href="#service-support"><h4>Support</h4><p class="muted">Maintenance, updates, and training.</p></a>
+                <div class="service"><h4>Web Development</h4><p class="muted">Responsive, fast, SEO-ready websites.</p></div>
+                <div class="service"><h4>App Development</h4><p class="muted">.</p></div>
+                <div class="service"><h4>UI / UX</h4><p class="muted">User-focused interfaces and flows.</p></div>
+                <div class="service"><h4>Creative Direction</h4><p class="muted">Brand, content & design strategy.</p></div>
+                <div class="service"><h4>SEO & Strategy</h4><p class="muted">Growth-focused optimization and content planning.</p></div>
+                <div class="service"><h4>Support</h4><p class="muted">Maintenance, updates, and training.</p></div>
               </div>
 
               <div class="section">
                 <h3 id="work">Working Process</h3>
                 <div class="process">
-                  <h4 id="step-discovery"><a href="#step-discovery">1. Discovery & Planning</a></h4>
-                  <p class="muted"> i define project goals, understand the audience, and outline clear deliverables.
-                    A strategic roadmap is created to ensure every step aligns with your vision and objectives.</p>
+                  <h4>1. Discovery & Planning</h4>
+                  <p class="muted">We clarify goals, audience and deliverables then build a roadmap.</p>
 
-                  <h4 id="step-design"><a href="#step-design">2. Design & Development</a></h4>
-                  <p class="muted">i craft wireframes and interactive prototypes, then develop production-ready code using modern technologies,
-                    ensuring a seamless and visually engaging experience.</p>
+                  <h4>2. Design & Development</h4>
+                  <p class="muted">Wireframes, prototypes and production code with modern tech.</p>
 
-                  <h4 id="step-testing"><a href="#step-testing">3. Testing & Support</a></h4>
-                  <p class="muted">Thorough QA, smooth launch, and ongoing post-launch support guarantee stability, performance,
-                    and continued growth for your digital project.</p>
+                  <h4>3. Testing & Support</h4>
+                  <p class="muted">QA, launch and post-launch support for stability and growth.</p>
                 </div>
               </div>
 
@@ -397,140 +348,81 @@
           <!-- Core Values section (icons + hover) -->
           <section class="card section" id="values" aria-labelledby="values-heading" style="margin-top:18px;">
             <h3 id="values-heading">Core Values</h3>
-            <p class="muted" style="margin-top:6px">Principles that guide my work and life. Click a value to read a short note.</p>
+            <p class="muted" style="margin-top:6px">Principles that guide my work and life.</p>
 
             <div class="values-grid" role="list" aria-label="Core values">
               <!-- Value 1 -->
-              <a class="value-card no-deco" href="#v-transparent" data-value="Transparent & Truth-Driven">
+              <div class="value-card" role="listitem">
                 <div class="value-icon" aria-hidden="true">
                   <!-- SVG: Shield/Truth -->
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L3 5v6c0 5 3.8 9.7 9 11 5.2-1.3 9-6 9-11V5l-9-3z" fill="white" /></svg>
                 </div>
                 <div class="value-title">Transparent & Truth-Driven</div>
-              </a>
+              </div>
 
               <!-- Value 2 -->
-              <a class="value-card no-deco" href="#v-collab" data-value="Collaborative & Humble">
+              <div class="value-card">
                 <div class="value-icon" aria-hidden="true">
                   <!-- SVG: Hands / Collaborative -->
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 6 6 1-4.5 4 1 6-5.5-3-5.5 3 1-6L3 9l6-1 3-6z" fill="white"/></svg>
                 </div>
                 <div class="value-title">Collaborative & Humble</div>
-              </a>
+              </div>
 
               <!-- Value 3 -->
-              <a class="value-card no-deco" href="#v-growth" data-value="Audacious & Growth-Oriented">
+              <div class="value-card">
                 <div class="value-icon" aria-hidden="true">
                   <!-- SVG: Rocket / Growth -->
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M2 21l21-9L13 3 2 21z" fill="white"/></svg>
                 </div>
                 <div class="value-title">Audacious & Growth-Oriented</div>
-              </a>
+              </div>
 
               <!-- Value 4 -->
-              <a class="value-card no-deco" href="#v-faith" data-value="Faithful & Theocentric ">
+              <div class="value-card">
                 <div class="value-icon" aria-hidden="true">
                   <!-- SVG: Cross / Faith -->
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M11 2h2v9h9v2h-9v9h-2v-9H2v-2h9V2z" fill="white"/></svg>
                 </div>
                 <div class="value-title">Faithful & Theocentric </div>
-              </a>
+              </div>
 
               <!-- Value 5 -->
-              <a class="value-card no-deco" href="#v-servant" data-value="Servant-Hearted & Compassionate">
+              <div class="value-card">
                 <div class="value-icon" aria-hidden="true">
                   <!-- SVG: Heart / Servant -->
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s-8-6.5-8-11 3.6-6 8-3 8-1.2 8 3-8 11-8 11z" fill="white"/></svg>
                 </div>
                 <div class="value-title">Servant-Hearted & Compassionate</div>
-              </a>
+              </div>
 
               <!-- Value 6 -->
-              <a class="value-card no-deco" href="#v-integrity" data-value="Integrity & Stewardship">
+              <div class="value-card">
                 <div class="value-icon" aria-hidden="true">
                   <!-- SVG: Scale / Integrity -->
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M7 22h10V9h3V7H4v2h3v13z" fill="white"/></svg>
                 </div>
                 <div class="value-title">Integrity & Stewardship</div>
-              </a>
+              </div>
 
               <!-- Value 7 -->
-              <a class="value-card no-deco" href="#v-purpose" data-value="Purpose-Driven & Spirit-Led">
+              <div class="value-card">
                 <div class="value-icon" aria-hidden="true">
                   <!-- SVG: Compass / Purpose -->
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2l4 9-9 4 5-13z" fill="white"/></svg>
                 </div>
                 <div class="value-title">Purpose-Driven & Spirit-Led</div>
-              </a>
+              </div>
 
               <!-- Value 8 -->
-              <a class="value-card no-deco" href="#v-excellence" data-value="Excellence with Grace">
+              <div class="value-card">
                 <div class="value-icon" aria-hidden="true">
                   <!-- SVG: Star / Excellence -->
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 7h7l-5.5 4.2L20 22l-8-5-8 5 3.5-8.8L2 9h7l3-7z" fill="white"/></svg>
                 </div>
                 <div class="value-title">Excellence with Grace</div>
-              </a>
-            </div>
-
-            <!-- value detail anchor targets -->
-            <div style="margin-top:14px">
-              <div id="v-transparent" class="card" style="margin-bottom:8px"><strong>Transparent & Truth-Driven</strong><p class="muted">Open communication and clear terms. I prioritize honest estimates and clear deliverables.</p></div>
-              <div id="v-collab" class="card" style="margin-bottom:8px"><strong>Collaborative & Humble</strong><p class="muted">I work alongside teams and clients—listening before building, valuing feedback at every step.</p></div>
-              <div id="v-growth" class="card" style="margin-bottom:8px"><strong>Audacious & Growth-Oriented</strong><p class="muted">I set bold goals and measure progress; iteration and learning guide the approach.</p></div>
-              <div id="v-faith" class="card" style="margin-bottom:8px"><strong>Faithful & Theocentric</strong><p class="muted">My faith shapes the way I serve and lead; work is an act of stewardship and purpose.</p></div>
-              <div id="v-servant" class="card" style="margin-bottom:8px"><strong>Servant-Hearted & Compassionate</strong><p class="muted">Client care, mentorship, and practical help are central to successful relationships.</p></div>
-              <div id="v-integrity" class="card" style="margin-bottom:8px"><strong>Integrity & Stewardship</strong><p class="muted">Clear budgets, responsible use of resources, and long-term thinking matter to me.</p></div>
-              <div id="v-purpose" class="card" style="margin-bottom:8px"><strong>Purpose-Driven & Spirit-Led</strong><p class="muted">Strategy is aligned to mission; I aim for meaningful, measurable outcomes.</p></div>
-              <div id="v-excellence" class="card" style="margin-bottom:8px"><strong>Excellence with Grace</strong><p class="muted">Quality matters. I deliver well-crafted work while staying humble and teachable.</p></div>
-            </div>
-          </section>
-
-          <!-- Gallery -->
-          <section class="card section" aria-labelledby="gallery-heading" style="margin-top:18px;">
-            <h3 id="gallery-heading">Image Gallery</h3>
-            <p class="muted">A few highlights — click to enlarge.</p>
-            <div class="gallery" id="gallery">
-              <img src="image.jpg" alt="Project 1" data-full="image.jpg">
-              <img src="image2.jpg" alt="Project 2" data-full="image2.jpg">
-              <img src="image3.jpg" alt="Project 3" data-full="image3.jpg">
-              <img src="image4.jpg" alt="Project 4" data-full="image4.jpg">
-              <img src="image5.jpg" alt="Project 5" data-full="image5.jpg">
-              <img src="image6.jpg" alt="Project 6" data-full="image6.jpg">
-            </div>
-          </section>
-
-          <!-- Testimonials -->
-          <section class="card section" id="testimonials" aria-labelledby="testi-heading" style="margin-top:18px;">
-            <h3 id="testi-heading">Testimonials</h3>
-            <p class="muted">Collaborator & Client Insights.</p>
-
-            <div class="testimonials" id="testimonialsWrap">
-              <div class="test-track" id="testTrack" aria-live="polite">
-                <div class="testimonial"><p>Noah helped us rebuild our digital presence with a cleaner, faster, and more reliable website.
-                  He understood our operational needs, simplified our content structure, and delivered a design that works well for both desktop and mobile users.
-                  His attention to detail, communication, and willingness to go the extra mile made the entire process smooth for our team.
-                  The final result reflects our brand better and has improved the way clients engage with us.”</p><div class="who">Alnoorani Hospitality</div></div>
-                
-                <div class="testimonial"><p>“Noah has been a blessing to our ministry. He approached the project with patience, clarity, and a heart to serve.
-                  He designed a website that communicates our mission effectively and is easy for our team to manage.
-                  His support didn’t stop after launch  he continued to guide us with improvements, content updates, and technical training.
-                  His work has helped us reach more people and share our message with impact.”</p><div class="who">GGM Ministry</div></div>
-
-                
-                <div class="testimonial"><p>“We partnered with Noah to streamline our EdTech platform and improve usability for teachers and students. 
-                  He delivered a fast, intuitive interface and optimized the site for performance, accessibility, and scale.
-                  His ability to understand complex requirements and turn them into simple, workable solutions was impressive.
-                  The enhancements he introduced noticeably reduced load times and improved user satisfaction across the board.”</p><div class="who">Dubai EdTech</div></div>
-
-                
-                <div class="testimonial"><p>“Noah is one of the most dependable developers we’ve worked with.
-                  He brings structure, clarity, and a calm mindset to every project. From planning to delivery, he communicates clearly and keeps the work moving without delays. 
-                  He also supports our clients after deployment with updates, troubleshooting, and training.
-                  His professionalism and consistency have made him a trusted partner for our agency.”</p><div class="who">Marco, Agency</div></div>
               </div>
             </div>
-            <div class="test-controls" id="testDots"></div>
           </section>
 
           <!-- contact -->
@@ -579,10 +471,7 @@
               <a class="no-deco" href="#work">Portfolio →</a>
               <a class="no-deco" href="#values">Values →</a>
               <a class="no-deco" href="#contact">Contact →</a>
-              <a class="no-deco" href="#testimonials">Testimonials →</a>
-              <a class="no-deco" href="#gallery">Gallery →</a>
-              <a class="no-deco" href="#services">Services →</a>
-              <a class="no-deco" href="#" onclick="openGit();return false;">GitHub →</a>
+              <a class="no-deco" href="#" onclick="openGit()">GitHub →</a>
             </div>
           </div>
         </aside>
@@ -662,7 +551,7 @@
       'EMAIL;TYPE=INTERNET:',
       'ADR;TYPE=WORK:;;Dubai;Dubai;UAE;;',
       'END:VCARD'
-    ].join('\r\n');
+    ].join('\\r\\n');
     const blob = new Blob([vcard], {type:'text/vcard'});
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -690,70 +579,6 @@
       });
     });
   })();
-
-  /* ------------------ Gallery lightbox ------------------ */
-  (function galleryLightbox(){
-    const gallery = document.getElementById('gallery');
-    if(!gallery) return;
-    const lightbox = document.createElement('div');
-    lightbox.className = 'lightbox';
-    lightbox.innerHTML = '<button aria-label="close lightbox" id="lbClose" style="position:absolute;top:18px;right:20px;background:transparent;border:none;color:#fff;font-size:22px;cursor:pointer">\u2715</button><img alt="expanded image" id="lbImg">';
-    document.body.appendChild(lightbox);
-    const lbImg = lightbox.querySelector('#lbImg');
-    gallery.addEventListener('click', (e)=>{
-      const img = e.target.closest('img');
-      if(!img) return;
-      lbImg.src = img.dataset.full || img.src;
-      lightbox.classList.add('show');
-      document.body.style.overflow = 'hidden';
-    });
-    function close(){ lightbox.classList.remove('show'); document.body.style.overflow=''; }
-    lightbox.addEventListener('click', (e)=> { if(e.target === lightbox) close(); });
-    document.getElementById('lbClose').addEventListener('click', close);
-    document.addEventListener('keydown', (ev)=>{ if(ev.key==='Escape') close(); });
-  })();
-
-  /* ------------------ Testimonials carousel ------------------ */
-  (function testimonials(){
-    const track = document.getElementById('testTrack');
-    const dotsWrap = document.getElementById('testDots');
-    if(!track || !dotsWrap) return;
-    const items = Array.from(track.children);
-    let index = 0;
-    // create dots
-    items.forEach((it,i)=>{
-      const dot = document.createElement('button'); dot.className='dot'; dot.setAttribute('aria-label', 'show testimonial '+(i+1));
-      dot.addEventListener('click', ()=>{ go(i); resetTimer(); });
-      dotsWrap.appendChild(dot);
-    });
-    const dots = Array.from(dotsWrap.children);
-    function update(){
-      const w = items[0].getBoundingClientRect().width + 12; // include gap
-      track.style.transform = `translateX(-${index * w}px)`;
-      dots.forEach((d,ii)=> d.classList.toggle('active', ii===index));
-    }
-    function go(i){ index = (i + items.length) % items.length; update(); }
-    update();
-    let timer = setInterval(()=>{ go(index+1); }, 4200);
-    function resetTimer(){ clearInterval(timer); timer = setInterval(()=>{ go(index+1); }, 4200); }
-    // pause on hover
-    track.addEventListener('mouseenter', ()=> clearInterval(timer));
-    track.addEventListener('mouseleave', ()=> resetTimer());
-    window.addEventListener('resize', update);
-  })();
-
-  // resize-friendly news animation setter
-  (function setNewsAnimation(){
-    const list = document.getElementById('newsList');
-    if(!list) return;
-    function setAnimation(){
-      const listHeight = Array.from(list.children).reduce((s,c) => s + c.getBoundingClientRect().height, 0);
-      const duration = Math.max(12, Math.floor(listHeight / 20));
-      list.style.animation = `newsScroll ${duration}s linear infinite`;
-    }
-    setAnimation(); window.addEventListener('resize', setAnimation);
-  })();
-
 </script>
 </body>
 </html>
