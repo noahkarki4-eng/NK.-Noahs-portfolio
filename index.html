@@ -8,7 +8,54 @@
 
   
 <style>
-   
+
+
+/* Bigger Floating WhatsApp Button with Glow */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 75px;
+  height: 75px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 18px rgba(37, 211, 102, 0.7);
+  z-index: 9999;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: whatsappGlow 2.2s infinite ease-in-out;
+}
+
+.floating-whatsapp img {
+  width: 42px;
+  height: 42px;
+}
+
+@keyframes whatsappGlow {
+  0% {
+    box-shadow: 0 0 12px rgba(37, 211, 102, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(37, 211, 102, 0.95);
+  }
+  100% {
+    box-shadow: 0 0 12px rgba(37, 211, 102, 0.5);
+  }
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.13);
+  box-shadow: 0 0 30px rgba(37, 211, 102, 1);
+}
+
+
+
+
+
+
+  
 
 .whatsapp-btn {
   display: inline-flex;
@@ -627,10 +674,21 @@ nav.primary a {
             </form>
           </section>
 
+          
+
            <a href="https://wa.me/9710567754812" target="_blank" class="whatsapp-btn">
                      <img src="whatsapp.png" alt="WhatsApp"> Chat on WhatsApp
                       </a>
 
+
+
+             <!-- Floating WhatsApp Button -->
+<a href="https://wa.me/97710567754812" class="floating-whatsapp" target="_blank">
+    <img src="whatsapp.png" alt="WhatsApp">
+</a>
+
+
+          
           
         </div>
 
