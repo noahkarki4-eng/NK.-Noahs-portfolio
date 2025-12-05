@@ -11,6 +11,33 @@
 
 
 
+<style>
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: scrollNews 10s linear infinite;
+}
+
+.news-item {
+  padding: 5px 0;
+}
+
+/* Keyframes for vertical scroll */
+@keyframes scrollNews {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%); /* Adjust if you duplicate items for seamless scroll */
+  }
+}
+</style>
+
+
+
+  
+
   
 
 .primary {
