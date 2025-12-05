@@ -9,44 +9,74 @@
   
 <style>
 
-/* Floating WhatsApp Button with Glow */
-.whatsapp-float {
+/* Container */
+.whatsapp-container {
   position: fixed;
   bottom: 25px;
   right: 25px;
-  width: 70px;
-  height: 70px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 9999;
+}
+
+/* Chat Text Bubble */
+.whatsapp-text {
+  background: #ffffff;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #333;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  animation: fadeSlide 0.6s ease forwards;
+}
+
+/* Animation for the text bubble */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* WhatsApp Button */
+.floating-whatsapp {
+  width: 75px;
+  height: 75px;
   background: #25D366;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 25px rgba(37, 211, 102, 0.8);
-  animation: glowPulse 2.2s infinite ease-in-out;
-  z-index: 9999;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.8);
+  animation: pulseGlow 2s infinite ease-in-out;
   transition: transform 0.25s ease;
 }
 
-.whatsapp-float img {
-  width: 40px;
-  height: 40px;
+.floating-whatsapp img {
+  width: 43px;
+  height: 43px;
 }
 
-/* Soft Glow Animation */
-@keyframes glowPulse {
+/* Pulse Glow Effect */
+@keyframes pulseGlow {
   0% {
-    box-shadow: 0 0 14px rgba(37, 211, 102, 0.6);
+    box-shadow: 0 0 14px rgba(37, 211, 102, 0.5);
   }
   50% {
-    box-shadow: 0 0 32px rgba(37, 211, 102, 1);
+    box-shadow: 0 0 34px rgba(37, 211, 102, 1);
   }
   100% {
-    box-shadow: 0 0 14px rgba(37, 211, 102, 0.6);
+    box-shadow: 0 0 14px rgba(37, 211, 102, 0.5);
   }
 }
 
-/* Hover Effect */
-.whatsapp-float:hover {
+/* Hover effect */
+.floating-whatsapp:hover {
   transform: scale(1.12);
 }
 
