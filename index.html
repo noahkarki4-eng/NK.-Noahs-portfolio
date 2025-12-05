@@ -9,7 +9,56 @@
   
 <style>
 
+/* Floating WhatsApp Button with Glow */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 70px;
+  height: 70px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(37, 211, 102, 0.8);
+  animation: glowPulse 2.2s infinite ease-in-out;
+  z-index: 9999;
+  transition: transform 0.25s ease;
+}
 
+.whatsapp-float img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Soft Glow Animation */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 14px rgba(37, 211, 102, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 32px rgba(37, 211, 102, 1);
+  }
+  100% {
+    box-shadow: 0 0 14px rgba(37, 211, 102, 0.6);
+  }
+}
+
+/* Hover Effect */
+.whatsapp-float:hover {
+  transform: scale(1.12);
+}
+
+
+
+
+
+
+
+
+
+  
 
   
 /* Container */
@@ -713,17 +762,20 @@ nav.primary a {
                      <img src="whatsapp.png" alt="WhatsApp"> Chat on WhatsApp
                       </a>
 
-
+     
 
            <!-- Floating WhatsApp Button with Chat Text -->
           <div class="whatsapp-container">
-            <a href="https://wa.me/97710567754812" class="floating-whatsapp" target="_blank">
+            <a href="https://wa.me/9710567754812" class="floating-whatsapp" target="_blank">
             <img src="whatsapp.png" alt="WhatsApp">
                    </a>
               <div class="whatsapp-text">Chat Now</div>
           </div>
 
-
+          <!-- Floating WhatsApp Button -->
+<a href="https://wa.me/9710567754812" class="whatsapp-float" target="_blank"> 
+    <img src="whatsapp.png" alt="WhatsApp Icon">
+</a>
 
           
           
