@@ -10,11 +10,44 @@
 <style>
 
 
-/* Bigger Floating WhatsApp Button with Glow */
-.floating-whatsapp {
+
+  
+/* Container */
+.whatsapp-container {
   position: fixed;
-  bottom: 22px;
-  right: 22px;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 9999;
+}
+
+/* Chat Text Bubble */
+.whatsapp-text {
+  background: #ffffff;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #333;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  animation: fadeSlide 0.6s ease forwards;
+}
+
+/* Animation for the text bubble */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* WhatsApp Button */
+.floating-whatsapp {
   width: 75px;
   height: 75px;
   background: #25D366;
@@ -22,32 +55,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 18px rgba(37, 211, 102, 0.7);
-  z-index: 9999;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  animation: whatsappGlow 2.2s infinite ease-in-out;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.8);
+  animation: pulseGlow 2s infinite ease-in-out;
+  transition: transform 0.25s ease;
 }
 
 .floating-whatsapp img {
-  width: 42px;
-  height: 42px;
+  width: 43px;
+  height: 43px;
 }
 
-@keyframes whatsappGlow {
+/* Pulse Glow Effect */
+@keyframes pulseGlow {
   0% {
-    box-shadow: 0 0 12px rgba(37, 211, 102, 0.5);
+    box-shadow: 0 0 14px rgba(37, 211, 102, 0.5);
   }
   50% {
-    box-shadow: 0 0 28px rgba(37, 211, 102, 0.95);
+    box-shadow: 0 0 34px rgba(37, 211, 102, 1);
   }
   100% {
-    box-shadow: 0 0 12px rgba(37, 211, 102, 0.5);
+    box-shadow: 0 0 14px rgba(37, 211, 102, 0.5);
   }
 }
 
+/* Hover effect */
 .floating-whatsapp:hover {
-  transform: scale(1.13);
-  box-shadow: 0 0 30px rgba(37, 211, 102, 1);
+  transform: scale(1.12);
 }
 
 
@@ -682,10 +715,14 @@ nav.primary a {
 
 
 
-             <!-- Floating WhatsApp Button -->
-<a href="https://wa.me/97710567754812" class="floating-whatsapp" target="_blank">
-    <img src="whatsapp.png" alt="WhatsApp">
-</a>
+           <!-- Floating WhatsApp Button with Chat Text -->
+          <div class="whatsapp-container">
+            <a href="https://wa.me/97710567754812" class="floating-whatsapp" target="_blank">
+            <img src="whatsapp.png" alt="WhatsApp">
+                   </a>
+              <div class="whatsapp-text">Chat Now</div>
+          </div>
+
 
 
           
