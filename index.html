@@ -9,83 +9,133 @@
   
 <style>
 
-
-/* Base Floating Button */
-.whatsapp-flex {
+/* Container */
+.whatsapp-container {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 14px 22px;
-  border-radius: 50px;
+  bottom: 25px;
+  right: 25px;
   display: flex;
   align-items: center;
   gap: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 600;
-  z-index: 1000;
-
-  /* Slide-in animation */
-  transform: translateX(80px);
-  opacity: 0;
-  animation: slideIn 0.7s ease forwards, pulseGlow 2s infinite ease-in-out;
+  z-index: 9999;
 }
 
-/* Slide-in keyframe */
-@keyframes slideIn {
+/* Chat Text Bubble */
+.whatsapp-text {
+  background: #ffffff;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #333;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  animation: fadeSlide 0.6s ease forwards;
+}
+
+/* Animation for the text bubble */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateX(15px);
+  }
   to {
-    transform: translateX(0);
     opacity: 1;
+    transform: translateX(0);
   }
 }
 
-/* Glow pulse animation */
+/* WhatsApp Button */
+.floating-whatsapp {
+  width: 75px;
+  height: 75px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.8);
+  animation: pulseGlow 2s infinite ease-in-out;
+  transition: transform 0.25s ease;
+}
+
+.floating-whatsapp img {
+  width: 43px;
+  height: 43px;
+}
+
+/* Pulse Glow Effect */
 @keyframes pulseGlow {
-  0% { box-shadow: 0 0 12px rgba(37,211,102,0.8); }
-  50% { box-shadow: 0 0 22px rgba(37,211,102,1); }
-  100% { box-shadow: 0 0 12px rgba(37,211,102,0.8); }
+  0% {
+    box-shadow: 0 0 14px rgba(37, 211, 102, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 34px rgba(37, 211, 102, 1);
+  }
+  100% {
+    box-shadow: 0 0 14px rgba(37, 211, 102, 0.5);
+  }
 }
 
 /* Hover effect */
-.whatsapp-flex:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 20px rgba(37,211,102,1);
+.floating-whatsapp:hover {
+  transform: scale(1.12);
 }
 
-/* WhatsApp Icon (Desktop) */
-.whatsapp-flex img {
-  width: 48px;
-  height: 48px;
-}
 
-/* ------------------------------- */
-/* MOBILE VERSION (icon only) */
-/* ------------------------------- */
-@media (max-width: 600px) {
-  .whatsapp-flex {
-    padding: 0;
-    width: 70px;
-    height: 70px;
-    background: #25D366;
-    border-radius: 50%;
-    justify-content: center;
-    gap: 0;
-  }
 
-  .whatsapp-flex img {
-    width: 45px;
-    height: 45px;
-  }
 
-  .whatsapp-text {
-    display: none;
-  }
+
+
+
+
+
+  
 
   
 
 
+
+
+
+
+  
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.whatsapp-btn img {
+  width: 22px;
+  height: 22px;
+}
+
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+}
+
+
+
+
+
+  
+  
+
+.primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
 
 
   
@@ -666,17 +716,23 @@ nav.primary a {
             </form>
           </section>
 
-
           
 
-<!-- WhatsApp Button -->
-<a href="https://wa.me/9710567754812" target="_blank" class="whatsapp-flex">
-  <img src="whatsapp.png" alt="WhatsApp">
-  <span class="whatsapp-text">Chat Now</span>
-</a>
+           <a href="https://wa.me/9710567754812" target="_blank" class="whatsapp-btn">
+                     <img src="whatsapp.png" alt="WhatsApp"> Chat on WhatsApp
+                      </a>
+
      
 
-   
+           <!-- Floating WhatsApp Button with Chat Text -->
+          <div class="whatsapp-container">
+            <a href="https://wa.me/9710567754812" class="floating-whatsapp" target="_blank">
+            <img src="whatsapp.png" alt="WhatsApp">
+                   </a>
+              <div class="whatsapp-text">Chat Now</div>
+          </div>
+
+
           
           
         </div>
