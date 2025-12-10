@@ -9,77 +9,40 @@
   
 <style>
 
-/* Container */
-.whatsapp-container {
+<style>
+/* Floating button styles */
+.whatsapp-float {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  z-index: 9999;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 1000;
 }
 
-/* Chat Text Bubble */
+.whatsapp-float:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0,0,0,0.3);
+}
+
+.whatsapp-float img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
 .whatsapp-text {
-  background: #ffffff;
-  padding: 10px 16px;
-  border-radius: 12px;
-  font-size: 15px;
-  color: #333;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-  animation: fadeSlide 0.6s ease forwards;
+  font-size: 16px;
+  font-weight: bold;
 }
-
-/* Animation for the text bubble */
-@keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateX(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* WhatsApp Button */
-.floating-whatsapp {
-  width: 75px;
-  height: 75px;
-  background: #25D366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 20px rgba(37, 211, 102, 0.8);
-  animation: pulseGlow 2s infinite ease-in-out;
-  transition: transform 0.25s ease;
-}
-
-.floating-whatsapp img {
-  width: 43px;
-  height: 43px;
-}
-
-/* Pulse Glow Effect */
-@keyframes pulseGlow {
-  0% {
-    box-shadow: 0 0 14px rgba(37, 211, 102, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 34px rgba(37, 211, 102, 1);
-  }
-  100% {
-    box-shadow: 0 0 14px rgba(37, 211, 102, 0.5);
-  }
-}
-
-/* Hover effect */
-.floating-whatsapp:hover {
-  transform: scale(1.12);
-}
-
+</style>
 
 
 
@@ -718,13 +681,11 @@ nav.primary a {
 
           
 
-           <!-- Floating WhatsApp Button with Chat Text -->
-<div class="whatsapp-container">
-  <a href="https://wa.me/9710567754812" class="floating-whatsapp" target="_blank">
-    <img src="whatsapp.png" alt="WhatsApp">
-    <span class="whatsapp-text">Chat Now</span>
-  </a>
-</div>
+ <!-- Floating WhatsApp Button -->
+<a href="https://wa.me/9710567754812" target="_blank" class="whatsapp-float">
+  <img src="whatsapp.png" alt="WhatsApp">
+  <span class="whatsapp-text">Chat Now</span>
+</a>
 
 
           
