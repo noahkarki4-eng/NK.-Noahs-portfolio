@@ -9,6 +9,33 @@
   
 <style>
 
+
+/* Blinking effect */
+.blink-text {
+    animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+    0% {opacity: 1;}
+    50% {opacity: 0.3;}
+    100% {opacity: 1;}
+}
+
+/* Floating movement */
+@keyframes floatBubble {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+
+
+
+  
+
+
+  
+
 /* Container */
 .whatsapp-container {
   position: fixed;
@@ -765,20 +792,20 @@ nav.primary a {
 
 <!-- Chat Bubble -->
 <div style="
-  position: fixed;
-  bottom: 95px;
-  right: 20px;
-  background: #ffb703;
-  padding: 10px 15px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  font-size: 25px;
-  color: #333;
-  z-index: 9999;
+    position: fixed;
+    bottom: 95px;
+    right: 20px;
+    background: #ffb703;
+    padding: 10px 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    font-size: 25px;
+    color: #333;
+    z-index: 9999;
+    animation: floatBubble 3s ease-in-out infinite;
 ">
-  Hi, how can I help you?
+    <span class="blink-text">Hi, how can I help you?</span>
 </div>
-
 
 
 
