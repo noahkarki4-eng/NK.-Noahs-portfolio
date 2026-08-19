@@ -9,6 +9,33 @@
   
 <style>
 
+
+/* Blinking effect */
+.blink-text {
+    animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+    0% {opacity: 1;}
+    50% {opacity: 0.3;}
+    100% {opacity: 1;}
+}
+
+/* Floating movement */
+@keyframes floatBubble {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+
+
+
+  
+
+
+  
+
 /* Container */
 .whatsapp-container {
   position: fixed;
@@ -45,8 +72,8 @@
 
 /* WhatsApp Button */
 .floating-whatsapp {
-  width: 75px;
-  height: 75px;
+  width: 70px;
+  height: 70px;
   background: #25D366;
   border-radius: 50%;
   display: flex;
@@ -716,6 +743,12 @@ nav.primary a {
             </form>
           </section>
 
+
+
+
+
+
+
           
 
            <a href="https://wa.me/9710567754812" target="_blank" class="whatsapp-btn">
@@ -728,9 +761,56 @@ nav.primary a {
           <div class="whatsapp-container">
             <a href="https://wa.me/9710567754812" class="floating-whatsapp" target="_blank">
             <img src="whatsapp.png" alt="WhatsApp">
-                   </a>
-              <div class="whatsapp-text">Chat Now</div>
+                     </a>
+              <div class=" whatsapp-text"> 👈Start the conversation here and take the next step forward.👉..................     </div>
+            
           </div>
+
+
+<!-- WhatsApp Floating Button + Chat Bubble -->
+<a href="https://wa.me/9710567754812" target="_blank" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  font-size: 40px;
+  z-index: 9999;
+">
+  &#x1F4AC;
+</a>
+
+        
+
+<!-- Chat Bubble -->
+<div style="
+    position: fixed;
+    bottom: 95px;
+    right: 20px;
+    background: #ffb703;
+    padding: 10px 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    font-size: 25px;
+    color: #333;
+    z-index: 9999;
+    animation: floatBubble 6s ease-in-out infinite;
+">
+    <span class="blink-text">Hi, how can I assist you?</span>
+</div>
+
+
+
+
+
 
 
           
